@@ -11,6 +11,9 @@
       <label for="zipcode">Enter your Zip Code: </label><input type="text" name="zipcode" autocomplete="off"/>
       <button type="submit" name="button">Submit</button>
     </form>
+    <form action="get" onsubmit="onSubmitCoords(event)">
+      <button type="submit" name="button">Get Current Location Weather</button>
+    </form>
     <div id="weather-area">
     </div>
 

@@ -2,8 +2,7 @@ function onSubmit(e) {
   e.preventDefault();
 
   let zipcode = e.target.elements[0].value;
-  const APIKEY = "1b3292d8476ca73faee1a365e843fbb1"
-;
+  const APIKEY = "1b3292d8476ca73faee1a365e843fbb1";
 
   let weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?zip=${zipcode}&APPID=${APIKEY}&units=imperial`
 
@@ -20,6 +19,43 @@ function onSubmit(e) {
         showWeather(fiveDay);
       });
     }
+}
+
+function onSubmitCoords(e) {
+  e.preventDefault();
+  const APIKEY = "1b3292d8476ca73faee1a365e843fbb1";
+  let position = navigator.geolocation.getCurrentPosition(function (pos){
+    let lat = pos.coords.latitude;
+    let long = pos.coords.longitude;
+    let weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&APPID=${APIKEY}&units=imperial`;
+    fetch(weatherUrl)
+        .then((res) => {
+          return res.json()
+        })
+        .then((response) => {
+          let fiveDay = getFiveDay(response);
+          showWeather(fiveDay);
+        });
+  }, function (err) {
+    alert("You need to have location services enabled!")
+  });
+
+
+  // let weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?zip=${zipcode}&APPID=${APIKEY}&units=imperial`
+  //
+  //
+  // if (zipcode === "") {
+  //   alert("You need to enter a zipcode!")
+  // } else {
+  //   fetch(weatherUrl)
+  //     .then((res) => {
+  //       return res.json()
+  //     })
+  //     .then((response) => {
+  //       let fiveDay = getFiveDay(response);
+  //       showWeather(fiveDay);
+  //     });
+  //   }
 }
 
 function getFiveDay(obj) {

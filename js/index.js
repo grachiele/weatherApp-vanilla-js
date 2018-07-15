@@ -47,10 +47,8 @@ function getFiveDay(obj) {
 }
 
 function showWeather(obj) {
-  console.log(obj);
   let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   let weatherArea = document.querySelector("#weather-area")
-  console.log(weatherArea)
   let city = `<h1 id="current-city">${obj.city.name}</h1>`
   let fiveDayArr = obj.fiveDay
   let weatherStuff = fiveDayArr.map(day => {

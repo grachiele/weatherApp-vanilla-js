@@ -80,7 +80,7 @@ function showWeather(obj) {
   let fiveDayArr = obj.fiveDay;
 
   let weatherStuff = fiveDayArr.map(day => {
-    let date = moment(day.dt_txt, "YYYY-MM-DD").format("dddd, MMMM Do, YYYY");
+    let date = moment(day.dt_txt, "YYYY-MM-DD").format("ddd MM/DD/YY");
     let html = `<li class="weather-day"><div class="weather-stuff"><h3>${date}</h3><img class="weather-pic" src="https://openweathermap.org/img/w/${day.weather[0].icon}.png" /><h6 class="description">${day.weather[0].description}</h6></div><ul class="temperature-list"><li class="temperatures">High: <span class="temperature">${parseInt(day.main.temp_max)} &#8457</span></li><li class="temperatures">Low: <span class="temperature">${parseInt(day.main.temp_min)} &#8457</span></li></ul></li>`;
 
   return html;

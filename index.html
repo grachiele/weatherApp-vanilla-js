@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <title>Weather App</title>
   </head>
-  <body>
+  <body onload="onBodyLoad()">
     <form action="get" onsubmit="onSubmit(event)">
-      <label for="zipcode">Enter your Zip Code: </label><input type="text" name="zipcode" autocomplete="off"/>
+      <label for="country-code">Choose your country: </label><select id="countries" name="country-code">
+
+      </select><br />
+      <label for="zipcode">Enter your city: </label><input type="text" name="zipcode" autocomplete="off"/><br />
       <button type="submit" name="button">Submit</button>
     </form>
     <form action="get" onsubmit="onSubmitCoords(event)">

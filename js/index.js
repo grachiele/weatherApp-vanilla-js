@@ -49,7 +49,7 @@ function getFiveDay(obj) {
 function showWeather(obj) {
   console.log(obj);
   let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  let weatherArea = document.querySelector("#weather-area ul");
+  let weatherArea = document.querySelector("#weather-area")
   console.log(weatherArea)
   let city = `<h1 id="current-city">${obj.city.name}</h1>`
   let fiveDayArr = obj.fiveDay
@@ -59,6 +59,8 @@ function showWeather(obj) {
 
   return html;
 })
+  weatherArea.innerHTML = city + `<div id="table"><ul id="five-day"></ul></div>`
+  let weatherAreaUl = document.querySelector("#weather-area ul");
   weatherHTML = weatherStuff.join("");
-  weatherArea.innerHTML = city + weatherHTML
+  weatherAreaUl.innerHTML = weatherHTML
 }

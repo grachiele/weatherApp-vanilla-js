@@ -48,6 +48,17 @@ function getFiveDay(obj) {
 
 function showWeather(obj) {
   console.log(obj);
-  let weatherArea = document.querySelector("#weather-area");
-  let city = `<h1 id="current-city">${obj.city}</h1>`
+  let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  let weatherArea = document.querySelector("#weather-area ul");
+  console.log(weatherArea)
+  let city = `<h1 id="current-city">${obj.city.name}</h1>`
+  let fiveDayArr = obj.fiveDay
+  let weatherStuff = fiveDayArr.map(day => {
+    let date = day.dt_txt.split(" ")[0].split("-");
+    let html = `<li class="weather-day"><div class="weather-stuff"><h3>${months[parseInt(date[1]- 1)] + " " + date[2] + ", " + date[0]}</h3><img class="weather-pic" src="http://openweathermap.org/img/w/${day.weather[0].icon}.png" /><h6 class="description">${day.weather[0].description}</h6></div><ul class="temperature-list"><li class="temperatures">High: <span class="temperature">${parseInt(day.main.temp_max)} &#8457</span></li><li class="temperatures">Low: <span class="temperature">${parseInt(day.main.temp_min)} &#8457</span></li></ul></li>`;
+
+  return html;
+})
+  weatherHTML = weatherStuff.join("");
+  weatherArea.innerHTML = city + weatherHTML
 }

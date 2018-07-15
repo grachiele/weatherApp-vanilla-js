@@ -5,7 +5,7 @@ function onSubmit(e) {
   const APIKEY = "1b3292d8476ca73faee1a365e843fbb1"
 ;
 
-  let weatherUrl = `http://api.openweathermap.org/data/2.5/forecast?zip=${zipcode}&APPID=${APIKEY}&units=imperial`
+  let weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?zip=${zipcode}&APPID=${APIKEY}&units=imperial`
 
 
   if (zipcode === "") {

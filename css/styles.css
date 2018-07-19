@@ -7,6 +7,11 @@ form-area {
   margin-right: auto;
 }
 
+button {
+  background-color: darkBlue;
+  color: white;
+}
+
 #weatherArea {
   margin-left: auto;
   margin-right: auto;

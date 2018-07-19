@@ -2,6 +2,11 @@ body {
   background-color: lightBlue;
 }
 
+form {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #weatherArea {
   margin-left: auto;
   margin-right: auto;

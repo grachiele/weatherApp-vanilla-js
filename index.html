@@ -6,16 +6,18 @@
     <title>Weather App</title>
   </head>
   <body onload="onBodyLoad()">
-    <form action="get" onsubmit="onSubmit(event)">
-      <label for="country-code">Choose your country: </label><select id="countries" name="country-code">
+    <div id="form-area">
+      <form action="get" onsubmit="onSubmit(event)">
+        <label for="country-code">Choose your country: </label><select id="countries" name="country-code">
 
-      </select><br />
-      <label for="zipcode">Enter your city: </label><input type="text" name="zipcode" autocomplete="off"/><br />
-      <button type="submit" name="button">Submit</button>
-    </form>
-    <form action="get" onsubmit="onSubmitCoords(event)">
-      <button type="submit" name="button">Get Current Location Weather</button>
-    </form>
+        </select><br />
+        <label for="zipcode">Enter your city: </label><input type="text" name="zipcode" autocomplete="off"/><br />
+        <button type="submit" name="button">Submit</button>
+      </form>
+      <form action="get" onsubmit="onSubmitCoords(event)">
+        <button type="submit" name="button">Get Current Location Weather</button>
+      </form>
+    </div>
     <div id="weather-area">
     </div>
 

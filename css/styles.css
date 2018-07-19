@@ -2,9 +2,10 @@ body {
   background-color: lightBlue;
 }
 
-form-area {
+#form-area {
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 button {

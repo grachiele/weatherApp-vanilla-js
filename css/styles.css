@@ -11,6 +11,8 @@ button {
   background-color: darkBlue;
   color: white;
   border: none;
+  padding: 5px;
+  margin: 2px;
 }
 
 #weatherArea {
